@@ -9,21 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var projects_service_1 = require('./projects.service');
 var ProjectsComponent = (function () {
-    function ProjectsComponent() {
+    function ProjectsComponent(service) {
+        this.service = service;
     }
     ProjectsComponent.prototype.ngOnInit = function () {
-        this.projects = [
-            { id: '1', name: 'First Project' },
-            { id: '2', name: 'Second Project' },
-        ];
+        var _this = this;
+        this.service.getProjects().subscribe(function (projects) {
+            return _this.projects = projects;
+        });
     };
     ProjectsComponent = __decorate([
         core_1.Component({
             selector: 'projects',
-            templateUrl: 'templates/projects.component.html'
+            templateUrl: 'templates/projects.component.html',
+            providers: [projects_service_1.ProjectsService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [projects_service_1.ProjectsService])
     ], ProjectsComponent);
     return ProjectsComponent;
 }());
