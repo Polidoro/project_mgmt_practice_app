@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var material_1 = require('@angular/material');
 var router_1 = require('@angular/router');
 var http_1 = require('@angular/http');
+var pair_pipe_1 = require('./pair.pipe');
 var app_component_1 = require('./app.component');
 var projects_component_1 = require('./projects.component');
 var projectSummary_component_1 = require('./projectSummary.component');
@@ -32,6 +33,7 @@ var AppModule = (function () {
                 router_1.RouterModule.forRoot(routes)
             ],
             declarations: [
+                pair_pipe_1.PairPipe,
                 app_component_1.AppComponent,
                 projects_component_1.ProjectsComponent,
                 projectSummary_component_1.ProjectSummaryComponent

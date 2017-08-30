@@ -4,6 +4,7 @@ import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
+import { PairPipe } from './pair.pipe';
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects.component';
 import { ProjectSummaryComponent } from './projectSummary.component';
@@ -21,6 +22,7 @@ const routes = [
         RouterModule.forRoot(routes)
     ],
     declarations: [
+        PairPipe,
         AppComponent,
         ProjectsComponent,
         ProjectSummaryComponent
