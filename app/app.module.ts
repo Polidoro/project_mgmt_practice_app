@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { ProjectsComponent } from './projects.component'
+import { ProjectsComponent } from './projects.component';
+import { ProjectSummaryComponent } from './projectSummary.component';
 
 const routes = [
     { path: '', redirectTo: '/projects', pathMatch: 'full'},
@@ -21,7 +22,8 @@ const routes = [
     ],
     declarations: [
         AppComponent,
-        ProjectsComponent
+        ProjectsComponent,
+        ProjectSummaryComponent
     ],
     bootstrap: [ AppComponent ]
 })
