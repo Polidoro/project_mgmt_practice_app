@@ -4,15 +4,22 @@ import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { ProjectsComponent } from './projects.component'
+
+const routes = [
+    { path: '', redirectTo: '/projects', pathMatch: 'full'},
+    { path: 'projects', component: ProjectsComponent }
+]
 
 @NgModule({
     imports: [
         BrowserModule,
         MaterialModule.forRoot(),
-        RouterModule.forRoot([])
+        RouterModule.forRoot(routes)
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        ProjectsComponent
     ],
     bootstrap: [ AppComponent ]
 })

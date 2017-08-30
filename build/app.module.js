@@ -13,6 +13,11 @@ var platform_browser_1 = require('@angular/platform-browser');
 var material_1 = require('@angular/material');
 var router_1 = require('@angular/router');
 var app_component_1 = require('./app.component');
+var projects_component_1 = require('./projects.component');
+var routes = [
+    { path: '', redirectTo: '/projects', pathMatch: 'full' },
+    { path: 'projects', component: projects_component_1.ProjectsComponent }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,10 +26,11 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 material_1.MaterialModule.forRoot(),
-                router_1.RouterModule.forRoot([])
+                router_1.RouterModule.forRoot(routes)
             ],
             declarations: [
-                app_component_1.AppComponent
+                app_component_1.AppComponent,
+                projects_component_1.ProjectsComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
