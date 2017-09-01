@@ -13,15 +13,18 @@ var platform_browser_1 = require('@angular/platform-browser');
 var material_1 = require('@angular/material');
 var router_1 = require('@angular/router');
 var http_1 = require('@angular/http');
+var forms_1 = require('@angular/forms');
 var pair_pipe_1 = require('./pair.pipe');
 var auth_service_1 = require('./auth.service');
 var app_component_1 = require('./app.component');
+var login_component_1 = require('./login.component');
 var home_component_1 = require('./home.component');
 var projects_component_1 = require('./projects.component');
 var projectSummary_component_1 = require('./projectSummary.component');
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: home_component_1.HomeComponent },
+    { path: 'login', component: login_component_1.LoginComponent },
     { path: 'projects', component: projects_component_1.ProjectsComponent }
 ];
 var AppModule = (function () {
@@ -31,6 +34,8 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 http_1.HttpModule,
+                forms_1.FormsModule,
+                forms_1.ReactiveFormsModule,
                 platform_browser_1.BrowserModule,
                 material_1.MaterialModule.forRoot(),
                 router_1.RouterModule.forRoot(routes)
@@ -38,6 +43,7 @@ var AppModule = (function () {
             declarations: [
                 pair_pipe_1.PairPipe,
                 app_component_1.AppComponent,
+                login_component_1.LoginComponent,
                 home_component_1.HomeComponent,
                 projects_component_1.ProjectsComponent,
                 projectSummary_component_1.ProjectSummaryComponent
