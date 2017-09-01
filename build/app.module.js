@@ -17,6 +17,7 @@ var forms_1 = require('@angular/forms');
 var pair_pipe_1 = require('./pair.pipe');
 var auth_service_1 = require('./auth.service');
 var app_component_1 = require('./app.component');
+var loggedIn_guard_1 = require('./loggedIn.guard');
 var login_component_1 = require('./login.component');
 var home_component_1 = require('./home.component');
 var projects_component_1 = require('./projects.component');
@@ -25,7 +26,7 @@ var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: home_component_1.HomeComponent },
     { path: 'login', component: login_component_1.LoginComponent },
-    { path: 'projects', component: projects_component_1.ProjectsComponent }
+    { path: 'projects', component: projects_component_1.ProjectsComponent, canActivate: [loggedIn_guard_1.LoggedInGuard] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -49,7 +50,7 @@ var AppModule = (function () {
                 projectSummary_component_1.ProjectSummaryComponent
             ],
             bootstrap: [app_component_1.AppComponent],
-            providers: [auth_service_1.AuthService]
+            providers: [auth_service_1.AuthService, loggedIn_guard_1.LoggedInGuard]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
